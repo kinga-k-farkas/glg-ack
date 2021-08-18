@@ -1,4 +1,5 @@
 import json
+import pandas as pd
 
 def get_domains_and_questions(split, dataset:str):
     ds_map = {
@@ -21,3 +22,9 @@ def get_grail_qa(split) -> dict:
         questions.append(entry['question'])
 
     return {'domains': domains, 'questions': questions}
+
+def set_domains(data, domains):
+    parts = []
+    for domain in domains:
+        parts.append(data.loc[data.domains == domain])
+    return pd.concat(parts)
