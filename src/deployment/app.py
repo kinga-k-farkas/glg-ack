@@ -25,7 +25,7 @@ else:
     pred = pd.DataFrame(pred, index=['probability'], columns=['Healthcare', 'Technology'])
     st.write(pred)
     healthcare_proba, technology_proba = pred.Healthcare[0], pred.Technology[0]
-    if healthcare_proba < 0.7 or technology_proba < 0.7:
+    if healthcare_proba < 0.7 and technology_proba < 0.7:
         pred = 'Other'
     else:
         pred = 'Healthcare' if healthcare_proba > technology_proba else 'Technology'
