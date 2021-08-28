@@ -1,0 +1,7 @@
+.devcontainer/
+data/
+docs/
+notebooks/
+references/
+reports/
+src.egg-info/
